@@ -12,7 +12,8 @@ int main()
 {
 	//std::cout << "Hello World!\n";
 
-	std::vector<std::vector<int>> A{ {1,2},{3,4},{5,6} };
+	//std::vector<std::vector<int>> A{ {1,2},{3,4},{5,6} };
+	std::vector<std::vector<int>> A{ {1,2},{3,4} };
 	std::vector<std::vector<int>> B{ {5,6},{7,8} };
 
 	std::cout << "A." << std::endl;
@@ -80,11 +81,9 @@ int mat_mul(const std::vector<std::vector<int>>& A, const std::vector<std::vecto
 	size_t B_rows{ B.size() }; // Num of rows in B
 	size_t A_cols{ A.at(0).size() }; // Num of cols in A
 
+	std::cout << "C_cols: " << C_cols << std::endl;
+	std::cout << "C_rows: " << C_rows << std::endl;
 
-	//std::cout << "C_cols: " << C_cols << std::endl;
-	//std::cout << "C_rows: " << C_rows << std::endl;
-
-	//std::cout << std::endl;
 
 	// iterate over each row
 	for (size_t r{}; r < C_rows; ++r)
@@ -93,27 +92,22 @@ int mat_mul(const std::vector<std::vector<int>>& A, const std::vector<std::vecto
 		// iterate over each column
 		for (size_t c{}; c < C_cols; ++c)
 		{
-			//std::cout << "r: " << r << " c: " << c << "  ";
-			//int res{A.at(r)}
-
 			int element_result{};
 
 			// then iterate over each column in A for the current row of C
 			// and each row in B for the current column of C
 			for (size_t cA{}, rB{}; cA < A_cols; ++cA, ++rB) // can also work for rB < B_rows
 			{
-				element_result += A.at(r).at(cA) * B.at(c).at(rB);
-
-				//for (size_t rB{}; rB < B_rows; ++rB)
-				//{
-				//	element_result += A.at(r).at(cA) * B.at()
-				//}
+				std::cout << "ar: " << r << ", ac: " << cA << "  br: " << rB << " bc, " << c << "  --> ";
+				std::cout << A.at(r).at(cA) << "  " << B.at(rB).at(c) << std::endl;
+				element_result += A.at(r).at(cA) * B.at(rB).at(c);
 			}
+
+			std::cout << "----\n" << std::endl;
 
 			row.push_back(element_result);
 		}
 		C.push_back(row);
-		//std::cout << std::endl;
 	}
 
 	return 0;
