@@ -128,6 +128,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="matrix_mul.cpp" />
+    <ClCompile Include="Mat_Mul_01basic.cpp" />
+    <ClCompile Include="Mat_Mul_02standard2x2.cpp" />
+    <ClCompile Include="Mat_Utils.cpp" />
+    <ClCompile Include="Mat_Mul_Tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Mat_Mul_01basic.hpp" />
+    <ClInclude Include="Mat_Mul_02standard2x2.hpp" />
+    <ClInclude Include="Mat_Mul_Tests.hpp" />
+    <ClInclude Include="Mat_Utils.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
