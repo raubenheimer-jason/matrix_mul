@@ -20,13 +20,20 @@ int main()
 	std::vector<std::vector<int>> A;
 	std::vector<std::vector<int>> B;
 
-	mat_rand(10, 3, A);
-	mat_rand(3, 7, B);
+	//mat_rand(10, 3, A);
+	//mat_rand(3, 7, B);
+
+	// 2x2
+	mat_rand(2, 2, A);
+	mat_rand(2, 2, B);
 
 	std::cout << "A." << std::endl;
 	mat_print(A);
+	std::cout << std::endl;
 	std::cout << "B." << std::endl;
 	mat_print(B);
+	std::cout << std::endl;
 
-	Mat_Mul_01basic_Test(A, B);
+	mat_mul_01basic_Test(A, B);
+	mat_mul_02standard2x2_Test(A, B);
 }

@@ -1,8 +1,13 @@
 #include "Mat_Mul_Tests.hpp"
 
-void Mat_Mul_01basic_Test(const std::vector<std::vector<int>> A, const std::vector<std::vector<int>> B)
+void mat_mul_01basic_Test(const std::vector<std::vector<int>> A, const std::vector<std::vector<int>> B)
 {
-	test_template("Mat_Mul_01basic_Test", mat_mul_01basic, A, B);
+	test_template("mat_mul_01basic_Test", mat_mul_01basic, A, B);
+}
+
+void mat_mul_02standard2x2_Test(const std::vector<std::vector<int>> A, const std::vector<std::vector<int>> B)
+{
+	test_template("mat_mul_02standard2x2_Test", mat_mul_02standard2x2, A, B);
 }
 
 void test_template(const std::string test_name, int(*test_func)(const std::vector<std::vector<int>>& A, const std::vector<std::vector<int>>& B, std::vector<std::vector<int>>& C), const std::vector<std::vector<int>> A, const std::vector<std::vector<int>> B)
@@ -24,7 +29,7 @@ void test_template(const std::string test_name, int(*test_func)(const std::vecto
 	// To get the value of duration use the count()
 	// member function on the duration object
 	std::cout << "time: " << duration.count() << " us" << std::endl;
-	std::cout << "------------------------------------" << std::endl;
+	std::cout << "------------------------------------\n" << std::endl;
 
 }
 

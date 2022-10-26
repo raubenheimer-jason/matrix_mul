@@ -31,7 +31,7 @@ void mat_print(const std::vector<std::vector<int>>& X)
 		}
 		std::cout << std::endl;
 	}
-	std::cout << std::endl;
+	//std::cout << std::endl;
 }
 
 bool mat_mul_check_dims(const std::vector<std::vector<int>>& A, const  std::vector<std::vector<int>>& B)
